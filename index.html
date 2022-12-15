@@ -24,13 +24,13 @@
                     <div class="header-profile mt-2 p-2">
                         <div class="container-profile">
                             <div class="container-img d-flex">
-                                <img src="./img/avatar_1.jpg"  class="" alt="">
-                                <p class="name-user ms-2">
+                                <img src="./img/avatar_io.jpg"  class="" alt="">
+                                <p class="name-user ms-2 fs-4 fw-semibold">
                                   sofia
                                 </p>
                             </div>
                         </div>
-                        <div class="icon fs-4">
+                        <div class="icon fs-4 me-4">
                             <ul>
                                 <li>
                                     <i class="fa-regular fa-circle"></i>
@@ -47,7 +47,7 @@
                     <!-- 'adv' -->
                    <div class="container-adv mt-3">
                     <div class="container-img d-flex p-2">
-                        <img src="./img/avatar_1.jpg"  class="" alt="">
+                        <img src="https://c8.alamy.com/compit/2dbc63y/l-icona-a-forma-di-campana-barrata-come-simbolo-per-la-modalita-silenziosa-per-disattivare-le-notifiche-o-le-suonerie-ecc-adatto-per-interfacce-di-siti-web-interfacce-smartphone-e-2dbc63y.jpg"  class="" alt="">
                         <div class="ms-2">
                             <p>
                                 Ricevi notifiche di nuovii messaggi 
@@ -59,13 +59,11 @@
                     </div>
                    </div>
                     <!-- search bar -->
-                    <section class="search row">
+                    <section class="search row p-1">
                         <div class="col-1">
-                            <div>
-                                <button class="w-100">
+                                <button class="btn">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
-                            </div>
                         </div>
                         <div class="col-11">
                             <div>
@@ -97,7 +95,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="icon fs-4">
+                        <div class="icon fs-4 me-4">
                             <ul>
                                 <li>
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -114,16 +112,16 @@
                     <!-- Message  -->
                     <section class="message">
                         <div class="row mt-4">
-                            <div class="offset-7 col-3" id="user-message">
+                            <div class="offset-8 col-3" id="user-message">
                                 <p>
                                     messagio utente
                                 </p>
                             </div>
                         </div>
-                        <div class="row mt-4 ms-5">
+                        <div class="row mt-4 ms-5" v-for="(element , index ) in contacts">
                             <div class="col-3" id="contact-message">
                                 <p>
-                                    messagio utente
+                                    {{ }}
                                 </p>
                             </div>
                         </div>  

@@ -36,12 +36,20 @@ div.icon>ul>li{
     padding-left: .7rem;
 }
 
+
+
 div.container-img>img{
     border-radius: 50%;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     overflow: hidden;
+    
 }
+
+div.container-img>p{
+    margin-top: 25px;
+}
+
 
 
 
