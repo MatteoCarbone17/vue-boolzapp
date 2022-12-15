@@ -15,9 +15,6 @@
 
 
 </head>
-<div id="app">    
-    
-</div>
 <body class=" d-flex justify-content-center align-items-center">
     <main> 
         <div id="app">
@@ -78,9 +75,9 @@
                     </section>
                     <section class="contact">
                         <div class="container-profile mt-2 p-2">
-                            <div class="container-img d-flex" v-for="(element , image )  in  contacts">
-                                <img src="./img/avatar_1.jpg"  class="" alt="">
-                                <p class="name-user ms-2" >
+                            <div class="container-img d-flex mb-3" v-for="(element , index ) in contacts">
+                                <img :src="`./img/avatar${element.avatar}.jpg`"   class="" alt="">
+                                <p class="name-user ms-2">
                                   {{ element.name }}
                                 </p>
                             </div>
@@ -116,7 +113,20 @@
                     </div>
                     <!-- Message  -->
                     <section class="message">
-    
+                        <div class="row mt-4">
+                            <div class="offset-7 col-3" id="user-message">
+                                <p>
+                                    messagio utente
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 ms-5">
+                            <div class="col-3" id="contact-message">
+                                <p>
+                                    messagio utente
+                                </p>
+                            </div>
+                        </div>  
                     </section>
                     <!-- input user for message  -->
                     <section class="input-text">

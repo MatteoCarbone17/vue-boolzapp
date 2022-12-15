@@ -74,6 +74,19 @@ div.header-profile-message{
  .input-user-message{
     width: 100%;
     
+    
+ }
+
+ div#contact-message{
+    background-color: aliceblue;
+    border-radius: 1rem;
+
+
+ }
+ div#user-message{
+    background-color: rgb(213, 249, 186);
+    border-radius: 1rem;
+    
  }
 
 
