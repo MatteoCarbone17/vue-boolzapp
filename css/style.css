@@ -43,12 +43,18 @@ div.container-img>img{
     width: 60px;
     overflow: hidden;
 }
-div.container-img>p{
-    
-    
+
+section.search{
+    height: 50px;
 }
 
+div.container-profile{
+    height: 50px;
+}
 
+div.adv{
+    height: 50px;
+}
 
 
 
