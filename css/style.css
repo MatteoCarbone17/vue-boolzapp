@@ -2,6 +2,9 @@ body{
     min-height: 100vh;
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
 }
+main{
+    width: 90%;
+}
 
 section.wrapper{
     height: calc(100vh - 3vh);
@@ -9,13 +12,45 @@ section.wrapper{
 }
 
 section.left-side{
-    background-color: antiquewhite;
-    width: 30%;
+    background-color: rgb(234, 234, 234);
+    width: 35%;
     height: 100%;
 }
 
 section.right-side{
     background-color: rgb(254, 145, 4);
-    width: 70%;
+    width: 65%;
     height: 100%;
 }
+div.header-profile{
+   height: 50px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+}
+
+div.icon>ul>li{
+    list-style-type: none;
+    display: inline;
+    padding-left: .7rem;
+}
+
+div.container-img>img{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+}
+div.container-img>p{
+    
+    
+}
+
+
+
+
+
+
+
