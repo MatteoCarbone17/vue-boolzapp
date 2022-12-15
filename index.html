@@ -15,131 +15,137 @@
 
 
 </head>
+<div id="app">    
+    
+</div>
 <body class=" d-flex justify-content-center align-items-center">
-    <main>
-        <section class="wrapper d-flex">
-            <!-- header User Profile -->
-            <section class="left-side">
-                <div class="header-profile mt-2 p-2">
-                    <div class="container-profile">
-                        <div class="container-img d-flex">
-                            <img src="./img/avatar_1.jpg"  class="" alt="">
-                            <p class="name-user ms-2">
-                              sofia
-                            </p>
+    <main> 
+        <div id="app">
+            <section class="wrapper d-flex">
+                <!-- header User Profile -->
+                <section class="left-side">
+                    <div class="header-profile mt-2 p-2">
+                        <div class="container-profile">
+                            <div class="container-img d-flex">
+                                <img src="./img/avatar_1.jpg"  class="" alt="">
+                                <p class="name-user ms-2">
+                                  sofia
+                                </p>
+                            </div>
+                        </div>
+                        <div class="icon fs-4">
+                            <ul>
+                                <li>
+                                    <i class="fa-regular fa-circle"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-regular fa-message"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="icon fs-4">
-                        <ul>
-                            <li>
-                                <i class="fa-regular fa-circle"></i>
-                            </li>
-                            <li>
-                                <i class="fa-regular fa-message"></i>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </li>
-                        </ul>
+                    <!-- 'adv' -->
+                   <div class="container-adv mt-3">
+                    <div class="container-img d-flex p-2">
+                        <img src="./img/avatar_1.jpg"  class="" alt="">
+                        <div class="ms-2">
+                            <p>
+                                Ricevi notifiche di nuovii messaggi 
+                            </p>
+                            <a href="#">
+                                attiva notifiche desktop
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- 'adv' -->
-               <div class="container-adv mt-3">
-                <div class="container-img d-flex p-2">
-                    <img src="./img/avatar_1.jpg"  class="" alt="">
-                    <div class="ms-2">
-                        <p>
-                            Ricevi notifiche di nuovii messaggi 
-                        </p>
-                        <a href="#">
-                            attiva notifiche desktop
-                        </a>
-                    </div>
-                </div>
-               </div>
-                <!-- search bar -->
-                <section class="search d-flex">
-                    <div>
-                        <button>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <div>
-                        <input type="text" id="input-user-search">
-                    </div>
+                   </div>
+                    <!-- search bar -->
+                    <section class="search row">
+                        <div class="col-1">
+                            <div>
+                                <button class="w-100">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-11">
+                            <div>
+                                <input type="text" id="input-user-search">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="contact">
+                        <div class="container-profile mt-2 p-2">
+                            <div class="container-img d-flex" v-for="(element , image )  in  contacts">
+                                <img src="./img/avatar_1.jpg"  class="" alt="">
+                                <p class="name-user ms-2" >
+                                  {{ element.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </section>
-                <section class="contact">
-                    <div class="container-profile mt-2 p-2">
-                        <div class="container-img d-flex">
-                            <img src="./img/avatar_1.jpg"  class="" alt="">
-                            <p class="name-user ms-2">
-                              sofia
-                            </p>
+    
+    
+                <!-- right-side -->
+                <section class="right-side position-relative">
+                    <div class="header-profile-message p-3">
+                        <div class="container-profile">
+                            <div class="container-img d-flex">
+                                <img src="./img/avatar_1.jpg"  class="" alt="">
+                                <p class="name-user ms-2">
+                                  
+                                </p>
+                            </div>
+                        </div>
+                        <div class="icon fs-4">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <!-- Message  -->
+                    <section class="message">
+    
+                    </section>
+                    <!-- input user for message  -->
+                    <section class="input-text">
+                        <div class="row">
+                            <div class="col-1">
+                                <div class="fs-2 ps-4 pe-2 pt-2 pb-2">
+                                    <i class="fa-solid fa-face-smile"></i>
+                                </div>
+                                
+                            </div>
+                            <div class="col-10">
+                                <div class=" pt-3">
+                                    <input type="text" class="input-user-message">
+                                </div>
+                                
+                            </div>
+                            <div class="col-1">
+                                <div class="fs-2 ps-4 pe-2 pt-2 pb-2">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                            </div>
+                        </div>                   
+                    </section>
+    
                 </section>
             </section>
 
-
-            <!-- right-side -->
-            <section class="right-side position-relative">
-                <div class="header-profile-message p-3">
-                    <div class="container-profile">
-                        <div class="container-img d-flex">
-                            <img src="./img/avatar_1.jpg"  class="" alt="">
-                            <p class="name-user ms-2">
-                              Nome utente
-                            </p>
-                        </div>
-                    </div>
-                    <div class="icon fs-4">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-paperclip"></i>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Message  -->
-                <section class="message">
-
-                </section>
-                <!-- input user for message  -->
-                <section class="input-text">
-                    <div class="row">
-                        <div class="col-1">
-                            <div class="fs-2 ps-4 pe-2 pt-2 pb-2">
-                                <i class="fa-solid fa-face-smile"></i>
-                            </div>
-                            
-                        </div>
-                        <div class="col-10">
-                            <div class=" pt-3">
-                                <input type="text" class="input-user-message">
-                            </div>
-                            
-                        </div>
-                        <div class="col-1">
-                            <div class="fs-2 ps-4 pe-2 pt-2 pb-2">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
-                        </div>
-                    </div>                   
-                </section>
-
-            </section>
-        </section>
+        </div>
     </main>
-    <footer>
-
-    </footer>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
 </body>
