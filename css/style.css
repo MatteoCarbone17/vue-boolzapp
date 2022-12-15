@@ -50,7 +50,7 @@ div.container-adv{
     
 }
 
-div#input-user{
+#input-user-search{
     width: 100%;
 }
 
@@ -63,6 +63,17 @@ div.header-profile-message{
     background-color: rgb(234, 234, 234);
     
  }
+ section.input-text{
+    position: absolute;
+    bottom: 0%; 
+    width: 100%;
+    background-color: rgb(243, 238, 234);
+ }
 
+
+ .input-user-message{
+    width: 100%;
+    
+ }
 
 
