@@ -16,19 +16,16 @@
 
 </head>
 <body class=" d-flex justify-content-center align-items-center">
-    <header>
-        
-    </header>
     <main>
         <section class="wrapper d-flex">
             <!-- header User Profile -->
-            <section class="row left-side p-2">
-                <div class="header-profile">
+            <section class="left-side">
+                <div class="header-profile mt-2 p-2">
                     <div class="container-profile">
                         <div class="container-img d-flex">
                             <img src="./img/avatar_1.jpg"  class="" alt="">
-                            <p>
-                              nome utente 
+                            <p class="name-user">
+                              sofia
                             </p>
                         </div>
                     </div>
@@ -46,30 +43,69 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="adv">
-                        <div class="container-img d-flex">
-                            <img src="./img/avatar_1.jpg"  class="" alt="">
-                            <p>
-                              nome utente 
-                            </p>
-                        </div>
+                <!-- 'adv' -->
+               <div class="container-adv mt-3">
+                <div class="container-img d-flex p-2">
+                    <img src="./img/avatar_1.jpg"  class="" alt="">
+                    <div class="ms-2">
+                        <p>
+                            Ricevi notifiche di nuovii messaggi 
+                        </p>
+                        <a href="#">
+                            attiva notifiche desktop
+                        </a>
                     </div>
                 </div>
+               </div>
                 <!-- search bar -->
-                <section class="row search">
-                    <div class="col-1">
+                <section class="search d-flex">
+                    <div>
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                    <div class="col-11">
-                        <input type="text">
+                    <div>
+                        <input type="text" id="input-user">
+                    </div>
+                </section>
+                <section class="contact">
+                    <div class="container-profile mt-2 p-2">
+                        <div class="container-img d-flex">
+                            <img src="./img/avatar_1.jpg"  class="" alt="">
+                            <p class="name-user">
+                              sofia
+                            </p>
+                        </div>
                     </div>
                 </section>
             </section>
-            
-            <section class="right-side ">
+
+
+            <!-- right-side -->
+            <section class="right-side">
+                <div class="header-profile-message p-2">
+                    <div class="container-profile">
+                        <div class="container-img d-flex">
+                            <img src="./img/avatar_1.jpg"  class="" alt="">
+                            <p class="name-user">
+                              sofia
+                            </p>
+                        </div>
+                    </div>
+                    <div class="icon fs-4">
+                        <ul>
+                            <li>
+                                <i class="fa-regular fa-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-message"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 
             </section>
         </section>
