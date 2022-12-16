@@ -47,10 +47,17 @@ div.container-img>img{
 }
 
 div.container-img>p{
-    margin-top: 25px;
+    padding-top: 18px;
 }
 
+/* to do: 
+per comodita ho aggiunto un hover, da eliminare.
+*/
 
+div.container-img:hover{
+    background-color: rgb(88, 202, 187);
+    
+}
 
 
 
@@ -87,13 +94,13 @@ div.header-profile-message{
     
  }
 
- div#contact-message{
+ div.contact-message{
     background-color: aliceblue;
     border-radius: 1rem;
 
 
  }
- div#user-message{
+ div.user-message{
     background-color: rgb(213, 249, 186);
     border-radius: 1rem;
     

@@ -27,12 +27,14 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            inputMessage : '',
             activeIndex : 0,
             contacts: [
                 {
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -55,6 +57,7 @@ createApp({
                     name: 'Fabio',
                     avatar: '_2',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -77,6 +80,7 @@ createApp({
                     name: 'Samuele',
                     avatar: '_3',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -99,6 +103,7 @@ createApp({
                     name: 'Alessandro B.',
                     avatar: '_4',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -116,6 +121,7 @@ createApp({
                     name: 'Alessandro L.',
                     avatar: '_5',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -133,6 +139,7 @@ createApp({
                     name: 'Claudia',
                     avatar: '_6',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -155,6 +162,7 @@ createApp({
                     name: 'Federico',
                     avatar: '_7',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -172,6 +180,7 @@ createApp({
                     name: 'Davide',
                     avatar: '_8',
                     visible: true,
+                    inputText : '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -181,12 +190,12 @@ createApp({
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                            status: 'sent'
+                            status: 'sent',
                         },
                         {
                             date: '10/01/2020 15:51:00',
                             message: 'OK!!',
-                            status: 'received'
+                            status: 'received',
                         }
                     ],
                 }
@@ -194,11 +203,54 @@ createApp({
 
         }
     },
+    
+    /* computed : {
+       data () {
+           let current = new Date();
+           return current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+       },
 
+   }, */
     methods : {
-        changeContact(index){
-           this.activeIndex = index ;
-        }
-    }
 
+        
+        changeContact(index){
+           this.contacts[this.activeIndex].inputText = this.inputMessage ;
+           this.activeIndex = index ;
+           this.inputMessage = this.contacts[this.activeIndex].inputText; 
+        },
+
+        sentMessage(){
+            const message = { 
+                date: Date.now(),
+                message : this.inputMessage,
+                status: 'sent',
+            }
+
+            this.contacts[this.activeIndex].messages.push(message);
+            this.inputMessage = '';
+            
+        },
+
+        contactReply(){
+            setTimeout(() => {
+                const message = { 
+                    date: Date.now(),
+                    message : 'Sciao belo',
+                    status: 'received'
+                }
+                this.contacts[this.activeIndex].messages.push(message);
+    
+
+            }, 1000);
+        },
+
+
+
+    },
+
+ 
 }).mount('#app');
+
+
+

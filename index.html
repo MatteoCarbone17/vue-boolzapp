@@ -72,7 +72,7 @@
                         </div>
                     </section>
                     <!-- section contact -->
-                    <section class="contact"v-for="(element , index ) in contacts" @click="changeContact(index)">
+                    <section class="contact" v-for="(element , index ) in contacts" @click="changeContact(index)">
                         <div class="container-profile mt-2 p-2" >
                             <div class="container-img d-flex mb-3" >
                                 <img :src="`./img/avatar${element.avatar}.jpg`"   class="" alt="">
@@ -89,10 +89,10 @@
                 <section class="right-side position-relative">
                     <div class="header-profile-message p-3">
                         <div class="container-profile">
-                            <div class="container-img d-flex">
-                                <img src="./img/avatar_1.jpg"  class="" alt="">
+                            <div class="container-img d-flex" >
+                                <img :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`"  class="" alt="">
                                 <p class="name-user ms-2">
-                                  
+                                  {{ contacts[activeIndex].name }}
                                 </p>
                             </div>
                         </div>
@@ -112,17 +112,16 @@
                     </div>
                     <!-- Message  -->
                     <section class="message" v-for="message  in contacts[activeIndex].messages">
-                        <div class="row mt-4">
-                            <div class="offset-8 col-3" id="user-message">
+                        <div class="row mt-4" v-if="message.status == 'sent' ">
+                            <div class="offset-8 col-3 user-message" >
                                 <p>
-                                    messagio utente
-                                </p>
+                                    {{ message.message  }} 
                             </div>
                         </div>
-                        <div class="row mt-4 ms-5" >
-                            <div class="col-3" id="contact-message">
+                        <div class="row mt-4 ms-5" v-else>
+                            <div class="col-3 contact-message">
                                 <p>
-                                    {{ message.message  }}
+                                    {{ message.message  }} 
                                 </p>
                             </div>
                         </div>  
@@ -136,11 +135,10 @@
                                 </div>
                                 
                             </div>
-                            <div class="col-10">
+                            <div class="col-9">
                                 <div class=" pt-3">
-                                    <input type="text" class="input-user-message">
+                                    <input type="text" class="input-user-message" @keyup.enter=" sentMessage(), contactReply()" v-model="inputMessage">
                                 </div>
-                                
                             </div>
                             <div class="col-1">
                                 <div class="fs-2 ps-4 pe-2 pt-2 pb-2">
