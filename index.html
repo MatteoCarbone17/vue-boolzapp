@@ -72,9 +72,9 @@
                         </div>
                     </section>
                     <!-- section contact -->
-                    <section class="contact" @click="nextContact()">
+                    <section class="contact"v-for="(element , index ) in contacts" @click="changeContact(index)">
                         <div class="container-profile mt-2 p-2" >
-                            <div class="container-img d-flex mb-3" v-for="(element , index ) in contacts">
+                            <div class="container-img d-flex mb-3" >
                                 <img :src="`./img/avatar${element.avatar}.jpg`"   class="" alt="">
                                 <p class="name-user ms-2">
                                   {{ element.name }}
