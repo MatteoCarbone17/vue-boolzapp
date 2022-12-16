@@ -71,8 +71,9 @@
                             </div>
                         </div>
                     </section>
-                    <section class="contact">
-                        <div class="container-profile mt-2 p-2">
+                    <!-- section contact -->
+                    <section class="contact" @click="nextContact()">
+                        <div class="container-profile mt-2 p-2" >
                             <div class="container-img d-flex mb-3" v-for="(element , index ) in contacts">
                                 <img :src="`./img/avatar${element.avatar}.jpg`"   class="" alt="">
                                 <p class="name-user ms-2">
@@ -110,7 +111,7 @@
                         </div>
                     </div>
                     <!-- Message  -->
-                    <section class="message">
+                    <section class="message" v-for="message  in contacts[activeIndex].messages">
                         <div class="row mt-4">
                             <div class="offset-8 col-3" id="user-message">
                                 <p>
@@ -118,10 +119,10 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row mt-4 ms-5" v-for="(element , index ) in contacts">
+                        <div class="row mt-4 ms-5" >
                             <div class="col-3" id="contact-message">
                                 <p>
-                                    {{ }}
+                                    {{ message.message  }}
                                 </p>
                             </div>
                         </div>  

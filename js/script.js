@@ -195,4 +195,13 @@ createApp({
         }
     },
 
+    methods : {
+        nextContact(){
+            this.activeIndex++;
+            if (activeIndex >= this.contacts.length) {
+                this.activeIndex = 0;                 
+            }
+        }
+    }
+
 }).mount('#app');
