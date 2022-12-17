@@ -7,103 +7,72 @@ main{
 }
 
 section.wrapper{
-    height: calc(100vh - 3vh);
+    height: calc(100vh - 4vh);
     background-color: rgb(217, 219, 214);
 }
 
 section.left-side{
     background-color: rgb(234, 234, 234);
     width: 35%;
-    height: 95%;
+    height: 100%;
 }
 
 section.right-side{
-    background-image: url(../img/mine.jpg);
+    background-image: url(./mine.jpg);
     width: 65%;
-    height: 95%;
+    height: 100%;
 }
-div.header-profile{
-   width: 100%;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   
+
+div.picture-container>img{
+    height: 68px;
+    width: 68px;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
 div.icon>ul>li{
     list-style-type: none;
-    display: inline;
-    padding-left: .7rem;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    padding-top: .8rem;
+    color: grey;
+
 }
 
-
-
-div.container-img>img{
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    overflow: hidden;
-    
-}
-
-div.container-img>p{
-    padding-top: 18px;
-}
-
-/* to do: 
-per comodita ho aggiunto un hover, da eliminare.
-*/
-
-div.container-img:hover{
-    background-color: rgb(88, 202, 187);
-    
-}
-
-
-
-
-div.container-adv{
+.banner{
     background-color: rgb(142, 218, 252);
-    
-}
-
-#input-user-search{
-    width: 100%;
 }
 
 
-div.header-profile-message{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(234, 234, 234);
-    
- }
- section.input-text{
+.title-profile>h6{
+    font-size: 1.2rem;
+}
+.title-profile>p{
+    font-size: .8rem;
+}
+
+section.header-room{
+    background-color:  rgb(234, 234, 234);
+}
+
+div.divider{
+    height: 50px;
+}
+
+div.user-message{
+    background-color:  rgb(213, 249, 186);
+    border-radius: 1rem;
+}
+
+div.contact-message{
+    background-color: white;
+    border-radius: 1rem;
+}
+
+section.input-user-message{
     position: absolute;
-    bottom: 0%; 
     width: 100%;
-    background-color: rgb(243, 238, 234);
- }
-
-
- .input-user-message{
-    width: 100%;
-    
-    
- }
-
- div.contact-message{
-    background-color: aliceblue;
-    border-radius: 1rem;
-
-
- }
- div.user-message{
-    background-color: rgb(213, 249, 186);
-    border-radius: 1rem;
-    
- }
-
-
+    bottom: 0%;
+    background-color:  rgb(243, 238, 234);
+}
