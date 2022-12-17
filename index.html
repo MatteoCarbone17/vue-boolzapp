@@ -22,7 +22,7 @@
                 <!-- header User Profile -->
                 <section class="left-side">
                     <section class="header-profile">
-                        <div class="row p-3">
+                        <div class="row p-2">
                             <div class="col-6">
                                 <div class="picture-container d-flex align-items-center">
                                    <img src="./avatar_io.jpg" alt="">
@@ -50,7 +50,7 @@
                     </section>
                     <!-- section (blue)banner -->
                     <section class="banner">
-                        <div class="row p-3">
+                        <div class="row p-2">
                             <div class="col d-flex">
                                 <div class="picture-container">
                                    <img src="https://c8.alamy.com/compit/2dbc63y/l-icona-a-forma-di-campana-barrata-come-simbolo-per-la-modalita-silenziosa-per-disattivare-le-notifiche-o-le-suonerie-ecc-adatto-per-interfacce-di-siti-web-interfacce-smartphone-e-2dbc63y.jpg" alt="">
@@ -66,14 +66,14 @@
                     </section>
                     <!-- Input research Contact  -->
                     <section class="research-contact">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <span class="input-group-text" id=""><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </section>
                     <!-- section contact  -->
                     <section class="contacts" v-for="(element , index ) in contacts" @click="changeContact(index)">
-                        <div class="row p-3">
+                        <div class="row p-2 div-container-profile">
                             <div class="col-10">
                                 <div class="picture-container d-flex">
                                    <img :src="`./img/avatar${element.avatar}.jpg`" alt="">
@@ -100,7 +100,7 @@
                 <!-- right-side -->
                 <section class="right-side position-relative">
                     <section class="header-room">
-                        <div class="row p-3">
+                        <div class="row p-2">
                             <div class="col-8">
                                 <div class="picture-container d-flex">
                                    <img :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="">

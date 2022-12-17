@@ -24,8 +24,8 @@ section.right-side{
 }
 
 div.picture-container>img{
-    height: 68px;
-    width: 68px;
+    height: 70px;
+    width: 70px;
     overflow: hidden;
     border-radius: 50%;
     object-fit: contain;
@@ -42,6 +42,16 @@ div.icon>ul>li{
 
 .banner{
     background-color: rgb(142, 218, 252);
+}
+
+section.contacts{
+    
+    height: calc((100% / 8) - 2.6rem);
+    
+}
+
+div.div-container-profile{
+    
 }
 
 
