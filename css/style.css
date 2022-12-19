@@ -61,7 +61,14 @@ section.contacts{
     
 }
 
-
+span.time{
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+    color: grey;
+    opacity: 50%;
+    font-size: 0.8rem;
+}
 
 .title-profile>h6{
     font-size: 1.2rem;

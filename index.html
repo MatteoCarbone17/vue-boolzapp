@@ -91,7 +91,7 @@
                                        {{ element.name}}
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso 
+                                        ultimo accesso
                                     </p>
                                    </div>
                                 </div>
@@ -145,22 +145,22 @@
                         <div class="divider">
                         </div>
                         <div class="row" v-if="message.status == 'sent'">
-                            <div class="offset-7 col-4 user-message" >
+                            <div class="offset-7 col-4 user-message position-relative" >
                                 <p class="pt-1 ps-1">
                                     {{ message.message }} 
                                 </p>
-                                <span> {{ message.date }} </span>
+                                <span class="time"> {{ message.date.substr(10) }} </span>
                             </div>
                             <div class="col-1"></div>
                         </div>
                         <div class="row" v-else>
                             <div class="col-1">
                             </div>
-                            <div class="col-4 contact-message">
+                            <div class="col-4 contact-message position-relative">
                                 <p class="pt-1 ps-1">
                                     {{ message.message  }} 
                                 </p>
-                                <span> {{ message.date }} </span>
+                                <span class="time"> {{ message.date.substr(10) }} </span>
                             </div>
                             <div class="offset-7">
                             </div>
@@ -189,5 +189,6 @@
     </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.1/build/global/luxon.min.js"></script>
 </body>
 </html>
