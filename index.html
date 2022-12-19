@@ -79,21 +79,21 @@
                             <span class="input-group-text" id=""><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" v-model="searchBar" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                        <div class="research-contact">
-                            <div v-for="(contact , index ) in filteredList(contacts)" :class="( index === activeIndex) ? `visual` : `hidden`" >
-                                <div class="picture-container d-flex" @click="changeContact(index)">
+                       <!--  <div class="research-contact">
+                            <div v-for="(contact , contactIndex ) in filteredList(contacts)" :class="( contactIndex === activeIndex) ? `visual` : `hidden`"  @click="changeContact(contactIndex)">
+                                <div class="picture-container d-flex">
                                     <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                     <div class="ps-2 title-profile">
                                      <h6>
-                                        {{ contact.name}} 
+                                        {{ contact.name }} 
                                      </h6>
                                 </div>
                                 
                             </div>
-                        </div>
+                        </div> -->
                     </section>
                     <!-- section contact  -->
-                    <section class="contacts" v-for="(element , index ) in contacts" @click="changeContact(index)">
+                    <section class="contacts" v-for="(element , index ) in filteredList(contacts)" @click="changeContact(element)">
                         <div class="row p-2 div-container-profile">
                             <div class="col-10">
                                 <div class="picture-container d-flex">

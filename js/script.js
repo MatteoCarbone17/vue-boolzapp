@@ -207,12 +207,12 @@ createApp({
         }
     },
     
-
-
+   
     methods : {
 
         
-        changeContact(index){
+        changeContact(contact){
+            const index = this.contacts.findIndex(person => person.name === contact.name);
             this.contacts[this.activeIndex].inputText = this.inputMessage;
             this.activeIndex = index;
             this.inputMessage = this.contacts[this.activeIndex].inputText; 
@@ -220,7 +220,6 @@ createApp({
 
         /* data() {
            this.contacts[this.activeIndex].messages.date = this.time
-            
             return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             
         }, */
