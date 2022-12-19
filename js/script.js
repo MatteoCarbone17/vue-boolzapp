@@ -27,8 +27,10 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            /* time : '',  */
             searchBar : '',
             inputMessage : '',
+            timeAccess : [ ],
             activeIndex : 0,
             contacts: [
                 {
@@ -216,10 +218,12 @@ createApp({
             this.inputMessage = this.contacts[this.activeIndex].inputText; 
         },
 
-        data () {
-            let current = new Date();
-            return current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        },
+        /* data() {
+           this.contacts[this.activeIndex].messages.date = this.time
+            
+            return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            
+        }, */
 
         filteredList() {
             return this.contacts.filter(contact => {
@@ -229,7 +233,7 @@ createApp({
 
         sendMessage(){
             const message = { 
-                date: new Date().toUTCString(),
+                date : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                 message : this.inputMessage,
                 status: 'sent',
             }
@@ -239,12 +243,17 @@ createApp({
             
         },
 
-        
+        /* lastAccess(){
+          const access = this.contacts[this.activeIndex].messages.pop(date)
+          this.timeAccess.push(access)
+          console.log(access)
+          return access
+        }, */
         
         contactReply(){
             setTimeout(() => {
                 const message = { 
-                    date : new Date().toUTCString(),
+                    date : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                     message : 'Ok',
                     status: 'received',
                 }

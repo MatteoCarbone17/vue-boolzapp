@@ -80,12 +80,15 @@
                             <input type="text" v-model="searchBar" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div class="research-contact">
-                            <div v-for="(contact) in filteredList(contacts)">
-                                <li  @click="changeContact(contact)">
-                                    <p>
-                                        {{ contact.name }}
-                                    </p>
-                                </li>
+                            <div v-for="(contact , index ) in filteredList(contacts)" :class="( index === activeIndex) ? `visual` : `hidden`" >
+                                <div class="picture-container d-flex" @click="changeContact(index)">
+                                    <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                                    <div class="ps-2 title-profile">
+                                     <h6>
+                                        {{ contact.name}} 
+                                     </h6>
+                                </div>
+                                
                             </div>
                         </div>
                     </section>
@@ -100,7 +103,7 @@
                                        {{ element.name}}
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso
+                                        ultimo accesso 
                                     </p>
                                    </div>
                                 </div>
@@ -127,7 +130,7 @@
                                         {{ contacts[activeIndex].name }} 
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso 
+                                        ultimo accesso <!-- {{ timeAccess }} -->
                                     </p>
                                    </div>
                                 </div>
