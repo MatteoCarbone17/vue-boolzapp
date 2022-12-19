@@ -3,6 +3,7 @@ body{
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
 }
 main{
+    font-family: 'Lato', sans-serif;
     width: 90%;
 }
 
@@ -12,15 +13,19 @@ section.wrapper{
 }
 
 section.left-side{
-    background-color: rgb(234, 234, 234);
+    background-color: white;
     width: 35%;
     height: 100%;
 }
 
 section.right-side{
-    background-image: url(./mine.jpg);
+    background-image: url(../img/mine.jpg);
     width: 65%;
     height: 100%;
+}
+
+section.header-profile{
+    background-color: rgb(234, 234, 234);
 }
 
 div.picture-container>img{
@@ -29,6 +34,13 @@ div.picture-container>img{
     overflow: hidden;
     border-radius: 50%;
     object-fit: contain;
+}
+
+div.icon-bell{
+    border-radius: 50%;
+    background-color: white;
+    height: 55px;
+    width: 55px;
 }
 
 div.icon>ul>li{
@@ -45,14 +57,10 @@ div.icon>ul>li{
 }
 
 section.contacts{
-    
     height: calc((100% / 8) - 2.6rem);
     
 }
 
-div.div-container-profile{
-    
-}
 
 
 .title-profile>h6{

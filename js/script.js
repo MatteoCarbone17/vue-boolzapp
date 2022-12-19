@@ -204,13 +204,7 @@ createApp({
         }
     },
     
-    /* computed : {
-       data () {
-           let current = new Date();
-           return current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-       },
-
-   }, */
+    
     methods : {
 
         
@@ -220,7 +214,7 @@ createApp({
            this.inputMessage = this.contacts[this.activeIndex].inputText; 
         },
 
-        sentMessage(){
+        sendMessage(){
             const message = { 
                 date: Date.now(),
                 message : this.inputMessage,
