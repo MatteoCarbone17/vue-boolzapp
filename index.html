@@ -103,7 +103,7 @@
                                        {{ element.name}}
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso 
+                                        ultimo accesso {{ data(element).substring(10)}}
                                     </p>
                                    </div>
                                 </div>
@@ -130,7 +130,7 @@
                                         {{ contacts[activeIndex].name }} 
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso <!-- {{ timeAccess }} -->
+                                        ultimo accesso  {{ data(contacts[activeIndex]).substring(10)}}
                                     </p>
                                    </div>
                                 </div>

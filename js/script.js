@@ -25,19 +25,18 @@ const { createApp } = Vue;
 
 
 createApp({
-    data(){
-        return{
-            /* time : '',  */
-            searchBar : '',
-            inputMessage : '',
-            timeAccess : [ ],
-            activeIndex : 0,
+    data() {
+        return {
+            searchBar: '',
+            inputMessage: '',
+            timeAccess: [],
+            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -60,7 +59,7 @@ createApp({
                     name: 'Fabio',
                     avatar: '_2',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -83,7 +82,7 @@ createApp({
                     name: 'Samuele',
                     avatar: '_3',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -106,7 +105,7 @@ createApp({
                     name: 'Alessandro B.',
                     avatar: '_4',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -124,7 +123,7 @@ createApp({
                     name: 'Alessandro L.',
                     avatar: '_5',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -142,7 +141,7 @@ createApp({
                     name: 'Claudia',
                     avatar: '_6',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -165,7 +164,7 @@ createApp({
                     name: 'Federico',
                     avatar: '_7',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -183,7 +182,7 @@ createApp({
                     name: 'Davide',
                     avatar: '_8',
                     visible: true,
-                    inputText : '',
+                    inputText: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -206,23 +205,30 @@ createApp({
 
         }
     },
-    
-   
-    methods : {
 
+    computed: {
         
-        changeContact(contact){
+    },
+    
+    
+    methods: {
+        
+        data(contact) {
+            const lastReceivedMessage = contact.messages.reverse().find(message => message.status == 'received')
+            //const time = new Date(lastReceivedMessage.date)
+           return lastReceivedMessage.date
+           // return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    
+    
+        },
+        
+        changeContact(contact) {
             const index = this.contacts.findIndex(person => person.name === contact.name);
             this.contacts[this.activeIndex].inputText = this.inputMessage;
             this.activeIndex = index;
-            this.inputMessage = this.contacts[this.activeIndex].inputText; 
+            this.inputMessage = this.contacts[this.activeIndex].inputText;
         },
 
-        /* data() {
-           this.contacts[this.activeIndex].messages.date = this.time
-            return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            
-        }, */
 
         filteredList() {
             return this.contacts.filter(contact => {
@@ -230,16 +236,16 @@ createApp({
             })
         },
 
-        sendMessage(){
-            const message = { 
-                date : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                message : this.inputMessage,
+        sendMessage() {
+            const message = {
+                date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                message: this.inputMessage,
                 status: 'sent',
             }
-            
+
             this.contacts[this.activeIndex].messages.push(message);
             this.inputMessage = '';
-            
+
         },
 
         /* lastAccess(){
@@ -248,25 +254,25 @@ createApp({
           console.log(access)
           return access
         }, */
-        
-        contactReply(){
+
+        contactReply() {
             setTimeout(() => {
-                const message = { 
-                    date : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                    message : 'Ok',
+                const message = {
+                    date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                    message: 'Ok',
                     status: 'received',
                 }
                 this.contacts[this.activeIndex].messages.push(message);
-                
-                
+
+
             }, 1000);
         },
 
-        
-        
+
+
     },
-    
-    
+
+
 }).mount('#app');
 
 
