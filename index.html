@@ -77,7 +77,16 @@
                     <section class="research-contact">
                         <div class="input-group mb-2">
                             <span class="input-group-text" id=""><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" v-model="searchBar" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="research-contact">
+                            <div v-for="(contact) in filteredList(contacts)">
+                                <li  @click="changeContact(contact)">
+                                    <p>
+                                        {{ contact.name }}
+                                    </p>
+                                </li>
+                            </div>
                         </div>
                     </section>
                     <!-- section contact  -->
@@ -99,7 +108,7 @@
                             <div class="col-2">
                                 <div class="time text-secondary">
                                    <p>
-                                    12:00
+                                    
                                    </p>
                                 </div>
                             </div>
@@ -111,7 +120,7 @@
                     <section class="header-room">
                         <div class="row p-2">
                             <div class="col-8">
-                                <div class="picture-container d-flex">
+                                <div class="picture-container d-flex" >
                                    <img :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" alt="">
                                    <div class="ps-2 title-profile">
                                     <h6>
@@ -149,7 +158,7 @@
                                 <p class="pt-1 ps-1">
                                     {{ message.message }} 
                                 </p>
-                                <span class="time"> {{ message.date.substr(10) }} </span>
+                                <span class="time"> {{ message.date }} </span>
                             </div>
                             <div class="col-1"></div>
                         </div>
@@ -160,7 +169,7 @@
                                 <p class="pt-1 ps-1">
                                     {{ message.message  }} 
                                 </p>
-                                <span class="time"> {{ message.date.substr(10) }} </span>
+                                <span class="time"> {{ message.date }} </span>
                             </div>
                             <div class="offset-7">
                             </div>

@@ -23,10 +23,11 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 
 const { createApp } = Vue;
 
+
 createApp({
     data(){
         return{
-            
+            searchBar : '',
             inputMessage : '',
             activeIndex : 0,
             contacts: [
@@ -204,19 +205,31 @@ createApp({
         }
     },
     
-    
+
+
     methods : {
 
         
         changeContact(index){
-            this.contacts[this.activeIndex].inputText = this.inputMessage ;
-            this.activeIndex = index ;
+            this.contacts[this.activeIndex].inputText = this.inputMessage;
+            this.activeIndex = index;
             this.inputMessage = this.contacts[this.activeIndex].inputText; 
+        },
+
+        data () {
+            let current = new Date();
+            return current.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        },
+
+        filteredList() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.searchBar.toLowerCase())
+            })
         },
 
         sendMessage(){
             const message = { 
-                date: Date.now(),
+                date: new Date().toUTCString(),
                 message : this.inputMessage,
                 status: 'sent',
             }
@@ -226,18 +239,14 @@ createApp({
             
         },
 
-        /* time(date){
-           let date = this.contacts[this.activeIndex].messages.date
-           console.log(date)
-            return date.substr(10, 15);
-        }, */
+        
         
         contactReply(){
             setTimeout(() => {
                 const message = { 
-                    date: Date.now(),
+                    date : new Date().toUTCString(),
                     message : 'Ok',
-                    status: 'received'
+                    status: 'received',
                 }
                 this.contacts[this.activeIndex].messages.push(message);
                 
