@@ -215,9 +215,8 @@ createApp({
         
         data(contact) {
             const lastReceivedMessage = contact.messages.reverse().find(message => message.status == 'received')
-            //const time = new Date(lastReceivedMessage.date)
            return lastReceivedMessage.date
-           // return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+           
     
     
         },
@@ -247,13 +246,6 @@ createApp({
             this.inputMessage = '';
 
         },
-
-        /* lastAccess(){
-          const access = this.contacts[this.activeIndex].messages.pop(date)
-          this.timeAccess.push(access)
-          console.log(access)
-          return access
-        }, */
 
         contactReply() {
             setTimeout(() => {

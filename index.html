@@ -93,17 +93,17 @@
                         </div> -->
                     </section>
                     <!-- section contact  -->
-                    <section class="contacts" v-for="(element , index ) in filteredList(contacts)" @click="changeContact(element)">
+                    <section class="contacts" v-for="(contact , index ) in filteredList(contacts)" @click="changeContact(contact)">
                         <div class="row p-2 div-container-profile">
                             <div class="col-10">
                                 <div class="picture-container d-flex">
-                                   <img :src="`./img/avatar${element.avatar}.jpg`" alt="">
+                                   <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                    <div class="ps-2 title-profile">
                                     <h6>
-                                       {{ element.name}}
+                                       {{ contact.name}}
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso {{ data(element).substring(10)}}
+                                        ultimo messaggio inviato 
                                     </p>
                                    </div>
                                 </div>
@@ -111,7 +111,7 @@
                             <div class="col-2">
                                 <div class="time text-secondary">
                                    <p>
-                                    
+                                    {{ data(contact).substring(10)}}
                                    </p>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                         {{ contacts[activeIndex].name }} 
                                     </h6>
                                     <p class="text-secondary">
-                                        ultimo accesso  {{ data(contacts[activeIndex]).substring(10)}}
+                                        ultimo accesso alle {{ data(contacts[activeIndex]).substring(10)}}
                                     </p>
                                    </div>
                                 </div>
