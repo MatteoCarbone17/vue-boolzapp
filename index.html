@@ -79,18 +79,6 @@
                             <span class="input-group-text" id=""><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" v-model="searchBar" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                       <!--  <div class="research-contact">
-                            <div v-for="(contact , contactIndex ) in filteredList(contacts)" :class="( contactIndex === activeIndex) ? `visual` : `hidden`"  @click="changeContact(contactIndex)">
-                                <div class="picture-container d-flex">
-                                    <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
-                                    <div class="ps-2 title-profile">
-                                     <h6>
-                                        {{ contact.name }} 
-                                     </h6>
-                                </div>
-                                
-                            </div>
-                        </div> -->
                     </section>
                     <!-- section contact  -->
                     <section class="contacts" v-for="(contact , index ) in filteredList(contacts)" @click="changeContact(contact)">
